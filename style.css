@@ -1,0 +1,280 @@
+/* =====================
+   GLOBAL
+===================== */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Anuphan", "Poppins", sans-serif;
+}
+
+/* =====================
+   BACKGROUND
+===================== */
+body {
+  background: url("image/couple_bg.jpg") center / cover no-repeat fixed;
+}
+
+/* layer โปร่งใสคลุมทั้งหน้า */
+.page {
+  min-height: 100vh;
+  width: 100%;
+  background: rgba(255, 192, 203, 0.25);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* =====================
+   MAIN CONTAINER
+===================== */
+.container {
+  width: 100%;
+  max-width: 1000px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 36px;
+  box-shadow: 0 30px 60px rgba(255, 105, 135, 0.35);
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  overflow: hidden;
+}
+
+/* =====================
+   LEFT PANEL (ตกแต่ง)
+===================== */
+.left-panel {
+  background: linear-gradient(135deg, #ffe1ec, #fff4f8);
+  padding: 40px 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.left-panel h2 {
+  font-size: 30px;
+  color: #ff5d8f;
+  margin-bottom: 10px;
+}
+
+.left-panel p {
+  font-size: 16px;
+  color: #ff7aa2;
+  line-height: 1.6;
+}
+
+.decor {
+  margin: 20px 0;
+}
+
+.decor span {
+  font-size: 28px;
+  margin: 0 6px;
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+}
+
+.decor span:nth-child(2) { animation-delay: .4s; }
+.decor span:nth-child(3) { animation-delay: .8s; }
+.decor span:nth-child(4) { animation-delay: 1.2s; }
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+
+/* =====================
+   RIGHT PANEL (FORM)
+===================== */
+.right-panel {
+  padding: 40px 35px;
+}
+
+.right-panel h1 {
+  margin: 0;
+  color: #ff5d8f;
+  font-size: 28px;
+}
+
+.subtitle {
+  color: #ff8fab;
+  margin-bottom: 20px;
+}
+
+.view-rule {
+  background: #ffe4ec;
+  color: #ff5d8f;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* =====================
+   FORM FIELD
+===================== */
+.field {
+  margin-bottom: 18px;
+}
+
+.field-title {
+  display: block;
+  font-size: 14px;
+  color: #ff5d8f;
+  margin-bottom: 6px;
+}
+
+select,
+input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 18px;
+  border: 2px solid #ffd1dc;
+  font-size: 15px;
+  outline: none;
+}
+
+select:focus,
+input:focus {
+  border-color: #ff8fab;
+}
+
+/* =====================
+   TOTAL BOX
+===================== */
+.total-box {
+  margin-top: 10px;
+  padding: 14px;
+  background: #fff0f6;
+  border-radius: 20px;
+  text-align: center;
+  font-weight: 600;
+  color: #ff3d6e;
+}
+
+/* =====================
+   BUTTONS
+===================== */
+button {
+  font-family: inherit;
+}
+
+.right-panel button:last-of-type {
+  width: 100%;
+  margin-top: 20px;
+  padding: 16px;
+  border-radius: 26px;
+  border: none;
+  background: linear-gradient(135deg, #ff5d8f, #ff8fab);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(255, 120, 160, 0.4);
+}
+
+/* =====================
+   POPUP
+===================== */
+.popup-bg {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup {
+  background: white;
+  width: 90%;
+  max-width: 420px;
+  padding: 30px;
+  border-radius: 32px;
+  text-align: center;
+  animation: popup 0.3s ease;
+}
+
+@keyframes popup {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.popup h2 {
+  color: #ff5d8f;
+}
+
+.popup-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.confirm {
+  flex: 2;
+  background: linear-gradient(135deg, #ff5d8f, #ff8fab);
+  color: white;
+  border: none;
+  border-radius: 22px;
+  padding: 12px;
+}
+
+.cancel {
+  flex: 1;
+  background: #eee;
+  color: #666;
+  border: none;
+  border-radius: 22px;
+  padding: 12px;
+}
+
+.more-rule {
+  margin-top: 12px;
+  background: none;
+  border: none;
+  color: #ff5d8f;
+  cursor: pointer;
+}
+
+/* =====================
+   AGREEMENT IMAGE
+===================== */
+.agreement-img {
+  width: 100%;
+  border-radius: 18px;
+  margin-top: 15px;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .left-panel {
+    padding: 30px 20px;
+  }
+
+  .right-panel {
+    padding: 30px 25px;
+  }
+}

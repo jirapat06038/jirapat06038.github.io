@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>Love Agreement ❤️</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page">
+  <div class="container">
+
+    <!-- ===== LEFT PANEL (ตกแต่ง) ===== -->
+    <div class="left-panel">
+      <h2>💖 Love Rule</h2>
+      <p>
+        ความรักของเรา<br>
+        มีข้อตกลงนิดนึงนะ
+      </p>
+
+      <div class="decor">
+        <span>🌸</span>
+        <span>🧸</span>
+        <span>💌</span>
+        <span>✨</span>
+      </div>
+
+      <!-- รูปตกแต่ง -->
+      <img
+        class="cute-img"
+        src="https://cdn.jsdelivr.net/gh/ashleydw/lightbox@master/images/sample-3.jpg"
+        alt="cute illustration"
+      >
+    </div>
+
+    <!-- ===== RIGHT PANEL (ฟอร์ม) ===== -->
+    <div class="right-panel">
+
+      <h1>Love Agreement ❤️</h1>
+      <p class="subtitle">บันทึกการทำผิดข้อตกลง</p>
+
+      <button class="view-rule" onclick="openAgreement()">📜 ดูข้อตกลงเพิ่มเติม</button>
+
+      <div class="field">
+        <span class="field-title">ชื่อของผู้ทำผิด</span>
+        <select id="name">
+          <option>Best</option>
+          <option>Snow</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <span class="field-title">ทำผิดในกรณี</span>
+        <select id="case" onchange="calculateTotal()">
+          <option value="10">คำพูดที่ไม่เหมาะสม พูดคำหยาบ ด่ากัน</option>
+          <option value="10">อืม / อือ / อ่า / อ่าห๊ะ / เออ / ครับ / เว้ย / วะ</option>
+          <option value="50">พูดอ้อมค้อม ไม่ยอมพูดกันตรงๆ</option>
+          <option value="40">ประชดประชัน</option>
+          <option value="50">พูดถึงคนเก่า / บุคคลที่สาม (เชิงประชด)</option>
+          <option value="100">บอกเลิก (ทำไมไม่ยอมคุยกันตรงๆคะ??)</option>
+          <option value="50">งอน นอยไม่มีเหตุผลที่ชัดเจนหรือมากพอ</option>
+          <option value="70">ปล่อยงอมข้ามคืน หนีหาย ไม่บอก</option>
+          <option value="30">อ่านไม่ตอบ ออนไม่อ่าน</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <span class="field-title">จำนวนครั้งที่เกิดขึ้น</span>
+        <input
+          type="number"
+          id="round"
+          min="1"
+          value="1"
+          onchange="calculateTotal()"
+        >
+      </div>
+
+      <div class="total-box">
+        💰 รวม <span id="total">10</span> บาท
+      </div>
+
+      <button onclick="saveData()">💾 บันทึก</button>
+
+    </div>
+  </div>
+</div>
+
+<!-- ===== POPUP หลังบันทึก ===== -->
+<div class="popup-bg" id="popupBg">
+  <div class="popup">
+    <h2>💌 ข้อตกลงการชำระ</h2>
+    <p id="popupText"></p>
+
+    <div class="popup-actions">
+      <button class="confirm" onclick="confirmSave()">รับทราบ ❤️</button>
+      <button class="cancel" onclick="closePopup()">ยกเลิก</button>
+    </div>
+
+    <button class="more-rule" onclick="openAgreement()">📜 ดูข้อตกลงเพิ่มเติม</button>
+  </div>
+</div>
+
+<!-- ===== ดูข้อตกลงเป็นรูป ===== -->
+<div class="popup-bg" id="agreementBg">
+  <div class="popup">
+    <h2>📜 ข้อตกลงของเรา</h2>
+    <img src="image/agreement.jpg" class="agreement-img">
+    <button onclick="closeAgreement()">ปิด</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
